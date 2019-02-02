@@ -4,7 +4,7 @@
 
 grace-app provides consistency for GRACE applications by exposing standardized pre-compiled variables. Simply `import "github.com/GSA/grace-app"` inside your application and call `app.Init()` after you have called `flag.Parse()`. An additional flag will be available `-v` which when passed will print information about your application that was passed during compilation.
 
-`
+```
 package main
 
 import (
@@ -20,7 +20,7 @@ func main() {
 	// must be called after flag.Parse to process the 'v' flag
 	app.Init()
 }
-`
+```
 
 ## Setting variables during compilation
 
