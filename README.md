@@ -43,3 +43,11 @@ go tool nm mytool | findstr name
 `
 
 The two examples above show filtering the variables of the `mytool` Go binary to find variables whose names contain `name`. The fully-qualified name will generally consist of `package.variable` where package might be `github.com/GSA/grace-app` and the variable `name`. When passing ldflags it's important to ensure you're using the `-X` prior to each variable declaration. In addition, this method only supports string data, so further interpretation may be necessary if you want to use this method to pass an `int`, `[]string`, etc.
+
+## Public domain
+
+This project is in the worldwide [public domain](LICENSE.md). As stated in [CONTRIBUTING](CONTRIBUTING.md):
+
+> This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
+>
+> All contributions to this project will be released under the CC0 dedication. By submitting a pull request, you are agreeing to comply with this waiver of copyright interest.
