@@ -1,0 +1,12 @@
+name: 'GSA/grace-app'
+description: 'provides consistency for GRACE applications by exposing standardized pre-compiled variables.'
+license: cc0-1.0
+openSourceProject: 1
+governmentWideReuseProject: 1
+tags:
+    - open-source
+    - opensource
+    - grace
+    - devsecops
+contact:
+    email: grace-staff@gsa.gov
