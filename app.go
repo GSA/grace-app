@@ -19,11 +19,13 @@ func init() {
 	vPtr = flag.Bool("v", false, "prints application data, then exits")
 }
 
+const osErr1 = 1
+
 // Init ... checks the version flag, prints version, if set
 func Init() {
 	if !flag.Parsed() {
 		fmt.Println("flag.Parse must be called before app.Init()")
-		os.Exit(1)
+		os.Exit(osErr1)
 	}
 	if !*vPtr {
 		return
@@ -45,7 +47,7 @@ func version() {
 	data, err := json.MarshalIndent(&v, "", "\t")
 	if err != nil {
 		fmt.Printf("failed to marshal version data: %v", err)
-		os.Exit(1)
+		os.Exit(osErr1)
 	}
 	fmt.Println(string(data))
 }

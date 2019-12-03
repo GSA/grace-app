@@ -1,18 +1,18 @@
 version: 2
 jobs:
-  lint:
+  test:
     docker:
       - image: circleci/golang:latest
     working_directory: /go/src/github.com/GSA/grace-app
     steps:
       - checkout
       - run:
-          name: Lint code
-          command: make lint
+          name: Test code
+          command: make test
 
 workflows:
   version: 2
 
-  lint:
+  test:
     jobs:
-      - lint
+      - test
