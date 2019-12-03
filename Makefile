@@ -3,8 +3,11 @@ GODEP := $(GOBIN)/dep
 GOLANGCILINT := $(GOBIN)/golangci-lint
 GOSEC := $(GOBIN)/gosec
 
-.PHONY: lint dependencies
+.PHONY: lint dependencies test
 default: lint
+
+test: lint
+	go test -v -cover ./...
 
 lint: dependencies
 	$(GODEP) ensure

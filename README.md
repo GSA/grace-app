@@ -1,4 +1,4 @@
-# grace-app
+# grace-app [![CircleCI](https://circleci.com/gh/GSA/grace-app.svg?style=svg)](https://circleci.com/gh/GSA/grace-app)
 
 ## Usage
 

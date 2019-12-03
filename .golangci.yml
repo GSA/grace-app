@@ -119,6 +119,7 @@ linters:
   disable:
     - gochecknoinits
     - gochecknoglobals
+    - wsl
   fast: false
 
   # Independently from option `exclude` we use default exclude patterns,
