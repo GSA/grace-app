@@ -36,3 +36,7 @@ release/
 
 # vi/vim/GVim/MacVim backup files
 *.swp
+
+# idea (GoLand)
+.idea
+*.iml
