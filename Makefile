@@ -7,10 +7,10 @@ default: lint
 test: lint
 	go test -v -cover ./...
 
-lint:	precommit dependencies
+lint:	dependencies
 	$(GOLANGCILINT) run ./...
 
-dependencies: $(GOLANGCILINT)
+dependencies: precommit $(GOLANGCILINT)
 
 $(GOLANGCILINT):
 	go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
@@ -22,11 +22,6 @@ go.mod:
 	go mod init
 
 precommit:
-ifeq ($(UNAME_S),Linux)
-ifeq (,$(findstring Microsoft,$(uname -a)))
-	dos2unix .github/hooks/pre-commit
-endif
-endif
 ifneq ($(strip $(hooksPath)),.github/hooks)
 	@git config --add core.hooksPath .github/hooks
 endif
