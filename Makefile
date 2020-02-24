@@ -1,7 +1,7 @@
 GOBIN := $(GOPATH)/bin
 GOLANGCILINT := $(GOBIN)/golangci-lint
 
-.PHONY: lint dependencies test
+.PHONY: precommit lint dependencies test
 default: lint
 
 test: lint
