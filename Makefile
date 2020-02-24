@@ -1,16 +1,16 @@
 GOBIN := $(GOPATH)/bin
 GOLANGCILINT := $(GOBIN)/golangci-lint
 
-.PHONY: lint dependencies test
+.PHONY: precommit lint dependencies test
 default: lint
 
 test: lint
 	go test -v -cover ./...
 
-lint: dependencies
+lint:	dependencies
 	$(GOLANGCILINT) run ./...
 
-dependencies: $(GOLANGCILINT)
+dependencies: precommit $(GOLANGCILINT)
 
 $(GOLANGCILINT):
 	go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
@@ -20,3 +20,8 @@ go.sum: go.mod
 
 go.mod:
 	go mod init
+
+precommit:
+ifneq ($(strip $(hooksPath)),.github/hooks)
+	@git config --add core.hooksPath .github/hooks
+endif
